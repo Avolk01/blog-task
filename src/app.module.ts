@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TagsModule } from './tags/tags.module';
 import { CategoriesModule } from './categories/categories.module';
+import { AuthorsModule } from './authors/authors.module';
 
 @Module({
     imports: [
@@ -29,6 +30,7 @@ import { CategoriesModule } from './categories/categories.module';
         }),
         CategoriesModule,
         TagsModule,
+        AuthorsModule,
     ],
     controllers: [AppController],
     providers: [AppService],
