@@ -8,8 +8,8 @@ import { CreateCategoryResponseDto } from './dto/cerate-category.response.dto';
 import { CreateCategoryInputDto } from './dto/create-category.input.dto';
 import { UpdateCategoryInputDto } from './dto/update-category.input.dto';
 
-@Controller(ERoutes.COLORS)
-@ApiTags(EApiTags.COLORS)
+@Controller(ERoutes.CATEGORIES)
+@ApiTags(EApiTags.CATEGORIES)
 export class CategoriesController {
     constructor(private readonly categoriesService: CategoriesService) { }
 

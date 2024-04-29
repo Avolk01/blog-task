@@ -11,9 +11,9 @@ export class CategoriesService {
     ) { }
 
     public async createCategory({ name }: { name: string; }): Promise<Category> {
-        const color = this.categoryRepository.create({ name });
+        const category = this.categoryRepository.create({ name });
 
-        return this.categoryRepository.save(color);
+        return this.categoryRepository.save(category);
     }
 
     public async getAllCategories(): Promise<Category[]> {

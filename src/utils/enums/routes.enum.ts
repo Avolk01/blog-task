@@ -1,5 +1,6 @@
 export enum ERoutes {
-    AUTH = 'auth',
-    COLORS = 'colors',
-    PALETTES = 'palettes',
+    TAGS = 'tags',
+    AUTHORS = 'authors',
+    CATEGORIES = 'categories',
+    POSTS = "post"
 }

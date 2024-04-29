@@ -1,5 +1,6 @@
 export enum EApiTags {
-    PALETTES = 'palettes module',
-    COLORS = 'colors module',
-    AUTH = 'auth module',
+    TAGS = 'palettes module',
+    AUTHORS = 'colors module',
+    CATEGORIES = 'auth module',
+    POSTS = "posts module"
 }

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class UpdateTagInputDto {
     @ApiProperty({ description: `Tag's name`, example: `Tag` })
@@ -8,7 +8,7 @@ export class UpdateTagInputDto {
     name: string;
 
     @ApiProperty({ description: `Tag's id`, example: `some_random_postgres_id` })
-    @IsNotEmpty()
+    @IsOptional()
     @IsString()
     id: string;
 }

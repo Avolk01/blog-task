@@ -8,7 +8,7 @@ export class UpdateCategoryInputDto {
     id: string;
 
     @ApiProperty({ description: `Category's name`, example: `Category name` })
-    @IsNotEmpty()
+    @IsOptional()
     @IsString()
     name: string;
 }

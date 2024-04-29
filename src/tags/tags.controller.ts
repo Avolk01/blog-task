@@ -1,12 +1,15 @@
 import { Body, Controller, Delete, Get, HttpStatus, Post, Put, Query } from '@nestjs/common';
-import { ApiOkResponse } from '@nestjs/swagger';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { TagsService } from './tags.service';
 import { Tag } from './entities/tag.entity';
-import { CreateTagResponseDto } from './dto/tag.response.dto';
 import { CreateTagInputDto } from './dto/create-tag.input.dto';
 import { UpdateTagInputDto } from './dto/update-tag.input.dto';
+import { CreateTagResponseDto } from './dto/create-tag.response.dto';
+import { ERoutes } from 'src/utils/enums/routes.enum';
+import { EApiTags } from 'src/utils/enums/api-tags.enum';
 
-@Controller('tags')
+@Controller(ERoutes.TAGS)
+@ApiTags(EApiTags.TAGS)
 export class TagsController {
     constructor(private readonly tagsService: TagsService) { }
 
