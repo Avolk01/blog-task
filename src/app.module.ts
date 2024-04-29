@@ -6,6 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { TagsModule } from './tags/tags.module';
 import { CategoriesModule } from './categories/categories.module';
 import { AuthorsModule } from './authors/authors.module';
+import { PostsService } from './posts/posts.service';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
     imports: [
@@ -31,8 +33,9 @@ import { AuthorsModule } from './authors/authors.module';
         CategoriesModule,
         TagsModule,
         AuthorsModule,
+        PostsModule,
     ],
     controllers: [AppController],
-    providers: [AppService],
+    providers: [AppService, PostsService],
 })
 export class AppModule { }

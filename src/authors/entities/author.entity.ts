@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Post } from 'src/posts/entities/post.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ schema: 'blog_task' })
 export class Author {
@@ -13,4 +14,10 @@ export class Author {
 
     @Column()
     nickname: string;
+
+    @OneToMany(() => Post, (post) => post.author, {
+        cascade: true,
+        eager: true,
+    })
+    posts: Post[];
 }
