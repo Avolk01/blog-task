@@ -4,9 +4,9 @@ import { ERoutes } from 'src/utils/enums/routes.enum';
 import { EApiTags } from 'src/utils/enums/api-tags.enum';
 import { CategoriesService } from './categories.service';
 import { Category } from './entities/category.entity';
-import { CreateCategoryResponseDto } from './dto/cerate-category.response.dto';
 import { CreateCategoryInputDto } from './dto/create-category.input.dto';
 import { UpdateCategoryInputDto } from './dto/update-category.input.dto';
+import { CreateCategoryResponseDto } from './dto/create-category.response.dto';
 
 @Controller(ERoutes.CATEGORIES)
 @ApiTags(EApiTags.CATEGORIES)
