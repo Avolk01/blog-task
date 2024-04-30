@@ -18,13 +18,13 @@ export class CreatePostInputDto {
     @IsString()
     author: string;
 
-    @ApiProperty({ description: `Post categories ids`, example: `[some_random_postgres_id]` })
+    @ApiProperty({ description: `Post categories ids`, example: [`some_random_postgres_id]`] })
     @IsNotEmpty()
     @IsArray()
     @IsString({ each: true })
     categories: string[];
 
-    @ApiProperty({ description: `Post tags ids`, example: `[some_random_postgres_id]` })
+    @ApiProperty({ description: `Post tags ids`, example: [`some_random_postgres_id`] })
     @IsNotEmpty()
     @IsArray()
     @IsString({ each: true })

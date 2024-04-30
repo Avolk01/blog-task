@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Tag } from './entities/tag.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 
 @Injectable()
 export class TagsService {
@@ -31,5 +31,9 @@ export class TagsService {
 
     public async deleteTag({ id }: { id: string; }): Promise<void> {
         await this.tagsRepository.delete({ id });
+    }
+
+    public async getTagsByIds({ ids }: { ids: string[] }): Promise<Tag[]> {
+        return this.tagsRepository.find({ where: { id: In(ids) } });
     }
 }

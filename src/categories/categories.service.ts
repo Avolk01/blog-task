@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Category } from './entities/category.entity';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 
 @Injectable()
 export class CategoriesService {
@@ -32,5 +32,9 @@ export class CategoriesService {
 
     public async deleteCategory({ id }: { id: string }): Promise<void> {
         await this.categoryRepository.delete({ id });
+    }
+
+    public async getCategoriesByIds({ ids }: { ids: string[] }): Promise<Category[]> {
+        return this.categoryRepository.find({ where: { id: In(ids) } });
     }
 }
